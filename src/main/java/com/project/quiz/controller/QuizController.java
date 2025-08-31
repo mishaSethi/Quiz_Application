@@ -38,7 +38,6 @@ public class QuizController {
         return quizRepo.findById(quizId).map(quiz -> {
             quiz.setTitle(quizDetails.getTitle());
             quiz.setDescription(quizDetails.getDescription());
-            // Optional: update createdBy if needed
             return quizRepo.save(quiz);
         }).orElse(null);
     }
